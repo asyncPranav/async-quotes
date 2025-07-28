@@ -1,0 +1,222 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    width: 100%;
+
+}
+
+body {
+    background-color: #202020;
+    color: rgb(220, 219, 219);
+    padding: 2em 0 5em 0;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+h1{
+    text-align: center;
+    margin-bottom: 2em;
+}
+
+/* -----------------Quote------------------ */
+.favouriteContainer{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 2.5em;
+    padding: 2em 0;
+    align-items: center;
+}
+
+
+.quoteContainer {
+    
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.wrapper {
+    position: relative;
+    background-color: #cdf300;
+    border-radius: 2em 0;
+    box-shadow: 8px 8px 20px black;
+    padding: 3rem 4rem;
+    width: 80%;
+    max-width: 500px;
+    /* overflow: hidden; */
+}
+
+.quote {
+    text-align: center;
+    margin: auto;
+    border: 2px solid black;
+    position: relative;
+}
+
+.quoteText {
+    color: #202020;
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: bold;
+    z-index: 20;
+    padding: 1.5rem 3rem;
+}
+
+.fa-quote-left {
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-size: 3rem;
+    color: rgb(50, 102, 153);
+    background-color: #cdf300;
+    padding: 1rem;
+
+}
+
+.fa-quote-right {
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    font-size: 3rem;
+    color: rgb(50, 102, 153);
+    background-color: #cdf300;
+    padding: 1rem;
+    /* z-index: -1; */
+}
+
+/* -----------------Author------------------ */
+
+.author {
+    padding: 0 1rem;
+}
+
+.authorText {
+    color: rgb(50, 102, 153);
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+/* -----------------Remove Button------------------ */
+
+
+.remove button{
+    background-color: transparent;
+    color: rgb(215, 14, 54);
+    /* color: rgb(50, 102, 153); */
+    padding: 0.5rem;
+    border-radius: 0.4rem;
+    outline: none;
+    position: absolute;
+    bottom: 1.5rem;
+    right: 2rem;
+    border: 2px solid #202020;
+    transform: scale(1);
+}
+
+.remove button i{
+    font-size: 1.2rem;
+}
+
+.remove button:active{
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -----------------Media Queries------------------ */
+
+.home{
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    border-radius: 50%;
+    background-color: rgb(50, 102, 153);
+    width: 3.5rem;
+    height: 3.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.home a{
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.8rem;
+}
+
+.home a:active{
+    color: #cdf300;
+}
+
+
+
+/* -----------------Media Queries------------------ */
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 2.7rem 2rem;
+    }
+
+    .quoteText {
+        font-size: 1.15rem;
+        padding: 1.2rem 2.2rem;
+
+    }
+
+    .fa-quote-left {
+        font-size: 2.4rem;
+
+    }
+
+    .fa-quote-right {
+        font-size: 2.4rem;
+
+    }
+
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+        padding: 2.7rem 2rem;
+    }
+
+    .quoteText {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .fa-quote-left {
+        font-size: 2rem;
+
+    }
+
+    .fa-quote-right {
+        font-size: 2rem;
+
+    }
+
+}
+
+
+
+

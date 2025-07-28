@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Quotes App Layout</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      display: flex;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .sidebar {
+      width: 250px;
+      background-color: #f4f4f4;
+      padding: 1rem;
+      border: 2px dashed red;
+    }
+
+    .nav-links {
+      list-style: none;
+      margin-top: 1rem;
+    }
+
+    .nav-links li {
+      margin-bottom: 1rem;
+      padding: 0.75rem 1rem;
+      background-color: white;
+      border: 1px dotted gray;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    .main {
+      flex: 1;
+      padding: 1rem;
+      border: 2px dashed green;
+    }
+
+    .quote-area {
+      border: 2px dashed blue;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    /* Toggle Buttons (shared styles) */
+    .menu-btn, .close-btn {
+      position: absolute;
+      top: 1rem;
+      padding: 0.4rem 0.6rem;
+      background-color: #ccc;
+      border: 2px dashed orange;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 200;
+    }
+
+    .menu-btn {
+      left: 0; /* Sticks to left when sidebar is closed */
+      display: none;
+    }
+
+    .close-btn {
+      right: -45px; /* Floats to the right edge of sidebar */
+    }
+
+    @media (max-width: 768px) {
+      .sidebar {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        z-index: 100;
+      }
+
+      .menu-btn {
+        display: block;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <div class="close-btn" id="closeBtn">←</div>
+    <ul class="nav-links">
+      <li>🏠 Home</li>
+      <li>⭐ Favourites</li>
+      <li>🔗 GitHub</li>
+      <li>👨‍💻 Developer</li>
+    </ul>
+  </div>
+
+  <!-- Open button (left border of screen) -->
+  <div class="menu-btn" id="openBtn">☰</div>
+
+  <!-- Main content -->
+  <div class="main">
+    <div class="quote-area">
+      <h3>"This is a sample quote from the quote API."</h3>
+      <p>- Quote Author</p>
+      <div style="margin-top: 1rem;">
+        <button>New Quote</button>
+        <button>Save Quote</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const sidebar = document.getElementById("sidebar");
+    const openBtn = document.getElementById("openBtn");
+    const closeBtn = document.getElementById("closeBtn");
+
+    openBtn.addEventListener("click", () => {
+      sidebar.style.display = "block";
+      openBtn.style.display = "none";
+    });
+
+    closeBtn.addEventListener("click", () => {
+      sidebar.style.display = "none";
+      openBtn.style.display = "block";
+    });
+  </script>
+</body>
+</html>

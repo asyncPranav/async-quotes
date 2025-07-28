@@ -1,0 +1,280 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: sans-serif;
+    width: 100%;
+
+}
+
+body {
+    background-color: #202020;
+    color: rgb(220, 219, 219);
+    display: flex;
+    position: relative;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+.mainContainer {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* -----------------Navbar------------------ */
+
+
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15em;
+    height: 100vh;
+    background-color: #202020;
+    padding: 5em 1em 1em;
+    border-right: 2px solid #444;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+}
+
+.navbar.active {
+    transform: translateX(0);
+}
+
+.navlist {
+    list-style: none;
+}
+
+.navlist li {
+    margin-bottom: 0.8rem;
+}
+
+.navlist li a {
+    display: block;
+    padding: 0.7rem;
+    /* border: 2px solid red; */
+    color: #f0f0f0;
+    text-decoration: none;
+    border-radius: 4px;
+    border: 2px solid #202020;
+    transition: background-color 0.2s ease;
+}
+
+.navbar li a i{
+    margin-right: 0.5rem;
+}
+
+.navlist li a:hover {
+    background-color: #252525;
+    /* transform: scale(1.03); */
+    border: 2px solid rgb(50, 102, 153);
+}
+
+.navbar li a:hover i.fa-house{
+    color: gold;
+}
+
+.navbar li a:hover i.fa-heart{
+    color: crimson;
+}
+
+.navbar li a:hover i.fa-code{
+    color: chartreuse;
+}
+
+.navbar li a:hover i.fa-user-ninja{
+    color: salmon;
+}
+
+/* -----------------NavButton------------------ */
+
+.navButton {
+    font-size: 1.5rem;
+    color: #cdf300;
+    border: 2px solid #444;
+    border-radius: 5px;
+    padding: 0.4rem;
+    cursor: pointer;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 110;
+    transition: transform 0.3s ease;
+}
+
+
+/* -----------------Quote------------------ */
+
+
+.quoteContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+}
+
+.wrapper {
+    background-color: #cdf300;
+    border-radius: 2em 0;
+    box-shadow: 8px 8px 20px black;
+    padding: 3rem 4rem;
+    width: 80%;
+    max-width: 500px;
+    overflow: hidden;
+}
+
+.quote {
+    text-align: center;
+    margin: auto;
+    border: 2px solid black;
+    position: relative;
+}
+
+.quoteText {
+    color: #202020;
+    position: relative;
+    font-size: 1.3rem;
+    font-weight: bold;
+    z-index: 20;
+    padding: 1.5rem 3rem;
+}
+
+.fa-quote-left {
+    position: absolute;
+    top: -40px;
+    left: -20px;
+    font-size: 3rem;
+    color: rgb(50, 102, 153);
+    background-color: #cdf300;
+    padding: 1rem;
+
+}
+
+.fa-quote-right {
+    position: absolute;
+    bottom: -40px;
+    right: -20px;
+    font-size: 3rem;
+    color: rgb(50, 102, 153);
+    background-color: #cdf300;
+    padding: 1rem;
+    /* z-index: -1; */
+}
+
+/* -----------------Author------------------ */
+
+.author {
+    padding: 0 1rem;
+}
+
+.authorText {
+    color: rgb(50, 102, 153);
+    font-style: italic;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+}
+
+/* -----------------Quotes Buttons------------------ */
+
+.buttons {
+    border: 1px solid #7a9300;
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 2rem;
+    padding: 0.5rem 0;
+}
+
+
+.buttons button {
+    /* font-weight: bold; */
+    font-size: 0.9rem;
+    letter-spacing: 0.03rem;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    color: #303030;
+}
+
+.buttons button i {
+    font-size: 1rem;
+    transform: scale(1);
+    color: brown;
+
+}
+
+.buttons button:active{
+    transform: scale(1.1);
+    color: #404040;
+}
+
+.buttons button:active i.fa-heart {
+    transform: scale(1.2);
+    color: crimson;
+}
+
+.buttons button:active i.fa-forward-step {
+    transform: scale(1.2);
+    color: blueviolet;
+}
+
+
+
+/* -----------------Media Queries------------------ */
+
+@media (max-width: 600px) {
+    .wrapper {
+        padding: 2.5rem 2rem;
+        /* border: 4px solid red; */
+    }
+
+    .quoteText {
+        font-size: 1.15rem;
+        padding: 1.2rem 2.2rem;
+
+    }
+
+    .fa-quote-left {
+        font-size: 2.5rem;
+
+    }
+
+    .fa-quote-right {
+        font-size: 2.5rem;
+
+    }
+
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+        padding: 2.5rem 2rem;
+    }
+
+    .quoteText {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+
+    .fa-quote-left {
+        font-size: 2rem;
+
+    }
+
+    .fa-quote-right {
+        font-size: 2rem;
+
+    }
+
+}
